@@ -41,8 +41,8 @@ nav:
         - 2024/11: 2.md
         - 2024/12: 3.md
     - 中V推歌稿:
-        - 1st「世末歌者」: /Chinese Songs/1st世末歌者.md
-        - 3rd「纯蓝」: /Chinese Songs/3rd纯蓝.md
+        - 1st「世末歌者」: ./Chinese Songs/1st世末歌者.md
+        - 3rd「纯蓝」: ./Chinese Songs/3rd纯蓝.md
         - 2024/12: 3.md
     - 日V推歌稿:
         - 2024/10: 1.md
