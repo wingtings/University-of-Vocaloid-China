@@ -1,3 +1,23 @@
-site_name: My Docs
+site_name: University-of-Vocaloid-China
+site_url: https://wiki.feixilu.top
+repo_url: https://github.com/wingtings/University-of-Vocaloid-China
+google_analytics: ['UA-36723568-3', 'mkdocs.org']
+
 theme:
   name: 'material'
+
+nav:
+    - Home: index.md
+    - 观影会活动:
+        - 2024/10: 1.md
+        - 2024/11: 2.md
+        - 2024/12: 3.md
+    - 中V推歌稿:
+        - 2024/10: 1.md
+        - 2024/11: 2.md
+        - 2024/12: 3.md
+    - 日V推歌稿:
+        - 2024/10: 1.md
+        - 2024/11: 2.md
+        - 2024/12: 3.md
+    - VC Pedia: https://vcpedia.cn/
