@@ -1,7 +1,6 @@
 site_name: University-of-Vocaloid-China
 site_url: https://wiki.feixilu.top
 repo_url: https://github.com/wingtings/University-of-Vocaloid-China
-google_analytics: ['UA-36723568-3', 'mkdocs.org']
 
 theme:
   name: 'material'
