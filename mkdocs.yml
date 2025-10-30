@@ -12,12 +12,12 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
-    - toc.follow
     - toc.integrate
     - navigation.top
     - navigation.footer
 
   palette:
+    - primary: light blue
     - scheme: default
       primary: light blue
       accent: light blue
