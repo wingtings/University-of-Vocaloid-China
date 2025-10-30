@@ -1,11 +1,11 @@
-site_name: University-of-Vocaloid-China
+site_name: University of Vocaloid China
 site_url: https://wiki.feixilu.top
 repo_url: https://github.com/wingtings/University-of-Vocaloid-China
 
 theme:
   name: 'material'
-  logo: img/favicon.svg
-  favicon: img/favicon.png
+  logo: img/中术大学.png
+  favicon: img/favicon.svg
   features:
     - announce.dismiss
     - header.autohide
