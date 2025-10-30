@@ -13,39 +13,90 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.path
-    - toc.integrate
+    - toc.follow
     - navigation.top
     - navigation.footer
+
   palette:
     - primary: light blue
       # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
       # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
 
 nav:
     - Home: index.md
-    - 调校课程:
-        - 2024/10: 1.md
+    - 产出作品:
+        - 原创歌曲: ./Works/原创歌曲.md
+        - 翻调作品: ./Works/翻调作品.md
+        - PV/绘画作品: ./Works/PV绘画作品.md
+        - 宣传海报: ./Works/P宣传海报.md
+    - 调校活动:
+        - 2024 Fall:
+            - 迭羽P的开课尝试: ./Synthesis/2024_Fall/迭羽P的开课尝试.md
+            - 2025寒假“依言依语”活动: ./Synthesis/2024_Fall/2025寒假“依言依语”活动.md
+        - 2025 Spring:
+            - 乐正绫十周年“拾光忆绫”活动: ./Synthesis/2025_Spring/乐正绫十周年“拾光忆绫”活动.md
+        - 2025 Fall:
+            - 调校周常: ./Synthesis/2025_Fall/调校周常.md
+    - 大型演出活动:
+        - 2025 Spring:
+            - 中国科大ACG音乐会: ./Stages/2025_Spring/中国科大ACG音乐会.md
     - 观影会活动:
-        - 2024/10: 1.md
-        - 2024/11: 2.md
-        - 2024/12: 3.md
-    - 中V推歌稿:
-        - 1st「世末歌者」: ./Chinese Songs/1st世末歌者.md
-        - 3rd「纯蓝」: ./Chinese Songs/3rd纯蓝.md
-        - 2024/12: 3.md
-    - 日V推歌稿:
-        - 2024/10: 1.md
-        - 2024/11: 2.md
-        - 2024/12: 3.md
+        - 2024 Fall:
+            - 2024洛天依无线共鸣演唱会: ./Movies/2024_Fall/2024洛天依无线共鸣演唱会.md
+        - 2025 Spring:
+            - 乐正绫十周年生日会: ./Movies/2025_Spring/乐正绫十周年生日会.md
+        - 2025 Fall:
+            - 2025洛天依无限共鸣演唱会: ./Movies/2025_Fall/2025洛天依无限共鸣演唱会.md
+    - 中V推歌:
+        - 2024 Fall:
+            - 1st.「世末歌者」: ./Chinese_Songs/2024_Fall/1st.「世末歌者」.md
+            - 2nd.「大概是关于勇者战胜某个魔王的王道故事⁉️」: ./Chinese_Songs/2024_Fall/2nd.「大概是关于勇者战胜某个魔王的王道故事⁉️」.md
+            - 3rd.「纯蓝」: ./Chinese_Songs/2024_Fall/3rd.「纯蓝」.md
+            - 4th.「白鸟过河滩」: ./Chinese_Songs/2024_Fall/4th.「白鸟过河滩」.md
+            - 2025寒假短篇特辑: ./Chinese_Songs/2024_Fall/2025寒假短篇特辑.md
+        - 2025 Spring:
+            - 6th.「相思若循」: ./Chinese_Songs/2025_Spring/6th.「相思若循」.md
+            - 8th.「三月雨」: ./Chinese_Songs/2025_Spring/8th.「三月雨」.md
+            - 9th.「深夜诗人」: ./Chinese_Songs/2025_Spring/9th.「深夜诗人」.md
+            - 10th.「星火燎原」: ./Chinese_Songs/2025_Spring/10th.「星火燎原」.md
+            - 11th.「反乌托邦」: ./Chinese_Songs/2025_Spring/11th.「反乌托邦」.md
+            - 12th.「宿命论」: ./Chinese_Songs/2025_Spring/12th.「宿命论」.md
+            - 13th.「青春追梦人」: ./Chinese_Songs/2025_Spring/13th.「青春追梦人」.md
+        - 2025 Fall:
+            - 14th.「文学少女的忧郁」: ./Chinese_Songs/2025_Fall/14th.「文学少女的忧郁」.md
+            - 15th.「天行健」: ./Chinese_Songs/2025_Fall/15th.「天行健」.md
+    - 日V推歌:
+        - 2024 Fall:
+            - 1st.「メルト（Melt融化）」: 1.md
+        - 2025 Spring: 1.md
+        - 2025 Fall: 1.md
+    - 其他:
+        - 英v推歌: ./Others/English_Songs/111.md
+        - 你社的一些名人名梗名事:
+            - 乐正肥西路: ./Others/People/乐正肥西路.md
+            - 桜舞Phymusics: ./Others/People/桜舞Phymusics.md
+            - 立方体: ./Others/People/立方体.md
+            - YXAIN: ./Others/People/YXAIN.md
+            - wingtings: ./Others/People/wingtings.md
+    - 社团会议:
+        - 2024 Fall:
+            - 院级社团筹备以及建立: ./Meetings/2024_Fall/院级社团筹备以及建立.md
+            - 社团大会: ./Meetings/2024_Fall/社团大会.md
+            - 干事工作会: ./Meetings/2024_Fall/干事工作会.md
+        - 2025 Spring:
+            - 社团大会: ./Meetings/2025_Spring/社团大会.md
+            - 干事工作会: ./Meetings/2025_Spring/干事工作会.md
+        - 2025 Fall:
+            - 校级社团筹备以及答辩: ./Meetings/2025_Fall/校级社团筹备以及答辩.md
+            - 社团大会: ./Meetings/2025_Fall/社团大会.md
+            - 干事工作会: ./Meetings/2025_Fall/干事工作会.md
     - VC Pedia: https://vcpedia.cn/
