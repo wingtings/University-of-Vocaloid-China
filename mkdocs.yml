@@ -1,7 +1,7 @@
 site_name: University of Vocaloid China
 site_url: https://wiki.feixilu.top
 repo_url: https://github.com/wingtings/University-of-Vocaloid-China
-
+copyright: Copyright @ University of Vocaloid China 2025
 theme:
   name: 'material'
   logo: img/中术大学.png
@@ -18,18 +18,24 @@ theme:
 
   palette:
     - primary: light blue
-    - scheme: default
+    - accent: cyan
+      # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      scheme: default
       primary: light blue
-      accent: light blue
+      accent: cyan
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
+        name: Switch to light mode
+
+      # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
       primary: light blue
-      accent: light blue
+      accent: cyan
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to dark mode
 
 nav:
     - Home: index.md
@@ -111,3 +117,4 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.superfences
+
