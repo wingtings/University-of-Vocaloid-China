@@ -1,4 +1,3 @@
-
 # Welcome to VSTC!
 
 我们是肥西路神秘势力。

@@ -20,25 +20,30 @@ theme:
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
     - search.share #搜索分享按
+    - content.tooltips
 
   palette:
     - primary: light blue
     - accent: cyan
-      # Palette toggle for automatic mode
-    - scheme: default
-      primary: light blue
-      accent: cyan
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
-      # Palette toggle for light mode
-    - scheme: slate
-      primary: light blue
-      accent: cyan
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to system preference
 
 nav:
     - Home: index.md
@@ -154,8 +159,29 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       custom_checkbox: true
 
 extra:
-  generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
+  generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
+  social:
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/381317768
+      name: social account on BiliBili
+
+    - icon: fontawesome/brands/qq
+      link: http://3986895738.qzone.qq.com
+      name: social account on QQ
 
 plugins:
-  - search #搜索配置
+  - search: #搜索配置
+      lang: zh
   - tags
+  - meta:
+      meta_file: .meta.yml
+  - document-dates:
+      position: bottom         # 显示位置：top（标题后） bottom（文档末尾），默认：bottom
+      type: date               # 时间类型：date datetime timeago，默认：date
+      locale: zh               # 本地化语言：en zh zh_TW es fr de ar ja ko ru，默认：en
+      date_format: '%Y-%m-%d'  # 日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
+      time_format: '%H:%M:%S'  # 时间格式化字符串（仅在 type=datetime 时有效）
+      exclude: # 排除文件列表，默认为空
+#        - temp.md              # 排除指定文件
+#        - private/*            # 排除 private 目录下所有文件，包括子目录
+      show_author: true        # 是否显示作者信息，默认：true
