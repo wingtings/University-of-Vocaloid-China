@@ -23,27 +23,24 @@ theme:
     - content.tooltips
 
   palette:
-    - primary: light blue
-    - accent: cyan
-    # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
-    # Palette toggle for light mode
+        icon: material/link
+        name: 关闭自动模式
     - media: "(prefers-color-scheme: light)"
-      scheme: default
+      scheme: default # 日间模式
+      primary: light blue # 上方的
+      accent: indigo # 链接等可交互元件的高亮色
       toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
+        icon: material/toggle-switch # 图标
+        name: 切换至夜间模式 # 鼠标悬浮提示
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+      scheme: slate # 夜间模式
+      primary: indigo
+      accent: cyan
       toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
+        icon: material/toggle-switch-off-outline
+        name: 切换至日间模式
 
 nav:
     - Home: index.md
