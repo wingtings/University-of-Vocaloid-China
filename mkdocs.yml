@@ -2,8 +2,10 @@ site_name: University of Vocaloid China
 site_url: https://wiki.feixilu.top
 repo_url: https://github.com/wingtings/University-of-Vocaloid-China
 copyright: Copyright @ University of Vocaloid China 2025
+
 theme:
   name: 'material'
+  custom_dir: docs/overrides
   logo: img/中术大学.png
   favicon: img/favicon.svg
   features:
@@ -15,27 +17,28 @@ theme:
     - toc.integrate
     - navigation.top
     - navigation.footer
+    - search.suggest # 搜索输入一些字母时推荐补全整个单词
+    - search.highlight # 搜索出的文章关键词加入高亮
+    - search.share #搜索分享按
 
   palette:
     - primary: light blue
     - accent: cyan
       # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      scheme: default
+    - scheme: default
       primary: light blue
       accent: cyan
       toggle:
         icon: material/brightness-7
-        name: Switch to light mode
+        name: Switch to dark mode
 
       # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: slate
+    - scheme: slate
       primary: light blue
       accent: cyan
       toggle:
         icon: material/brightness-4
-        name: Switch to dark mode
+        name: Switch to light mode
 
 nav:
     - Home: index.md
@@ -110,11 +113,49 @@ nav:
     - VC Pedia: https://vcpedia.cn/
 
 # Markdown extensions
-markdown_extensions:
+markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+  - abbr
   - attr_list
+  - admonition
+  - def_list
+  - footnotes
+  - md_in_html
+  # - meta # 支持Markdown文件上方自定义标题标签等
+  - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format:
+            !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
+  - pymdownx.arithmatex: # latex支持
+      generic: true
   - toc:
-      permalink: true
-  - pymdownx.highlight:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
-  - pymdownx.superfences
+      linenums: true # 显示行号
+      # auto_title: true # 显示编程语言名称
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
+extra:
+  generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
+
+plugins:
+  - search #搜索配置
+  - tags

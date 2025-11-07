@@ -1,10 +1,3 @@
----
-title: 1st.「世末歌者」
-cover: https://tuchuang-12g.pages.dev/shimogezhe.webp
-date: 2024-10-22 16:51:28
-tags: 中文vocaloid
-category: 推歌稿
----
 
 **写稿日期：2024/10/22** 		
 

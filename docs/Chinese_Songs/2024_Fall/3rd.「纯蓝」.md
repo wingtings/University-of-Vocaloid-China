@@ -1,10 +1,4 @@
----
-title: 3rd.「纯蓝」
-cover: https://tuchuang-12g.pages.dev/chunlan.jpg 
-date: 2024-12-1 21:22:47
-tags: 中文vocaloid 
-category: 推歌稿
----
+
 
 **写稿日期：2024/12/1**
 
