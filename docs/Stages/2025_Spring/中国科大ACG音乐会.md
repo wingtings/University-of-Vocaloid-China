@@ -1,4 +1,4 @@
-2025年的ACG音乐会上，*@[桜舞Phymusics](https://space.bilibili.com/667802747?spm_id_from=333.1387.follow.user_card.click)*和*@[洛叶p](https://space.bilibili.com/381865582?spm_id_from=333.1387.follow.user_card.click)*为作为主持人的洛天依和乐正绫制作语调，让她们念出串场词。*@[迭羽P](https://space.bilibili.com/148968488?spm_id_from=333.1387.follow.user_card.click)*和*@[洛叶p](https://space.bilibili.com/381865582?spm_id_from=333.1387.follow.user_card.click)*制作的翻调作品《致你》登上第一阶段的压轴节目。
+2025年的ACG音乐会上，*@[桜舞Phymusics](https://space.bilibili.com/667802747)*和*@[洛叶p](https://space.bilibili.com/381865582)*为作为主持人的洛天依和乐正绫制作语调，让她们念出串场词。*@[迭羽P](https://space.bilibili.com/148968488)*和*@[洛叶p](https://space.bilibili.com/381865582)*制作的翻调作品《致你》登上第一阶段的压轴节目。
 
 
 
