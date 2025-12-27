@@ -3,3 +3,4 @@ mkdocs-material
 mkdocs-plugin-tags
 mkdocs-meta-descriptions-plugin
 mkdocs-document-dates
+mkdocs-material
