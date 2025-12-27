@@ -1,6 +1,16 @@
-mkdocs
-mkdocs-material
-mkdocs-plugin-tags
-mkdocs-meta-descriptions-plugin
-mkdocs-document-dates
-mkdocs-material
+# 核心与主题
+mkdocs>=1.6.1
+mkdocs-material>=9.5.0
+mkdocs-material-extensions>=1.3.1
+
+# Markdown 扩展 (提供 pymdownx 系列支持)
+pymdown-extensions>=10.0
+
+# 插件列表
+mkdocs-document-dates>=3.5.2
+# 如果你的 tags 报错，请使用这个兼容版本或依赖 Material 内置
+# mkdocs-plugin-tags  # 建议先注释掉，优先使用 Material 内置 tags
+
+# 运行环境兼容 (针对 Python 3.13)
+pillow>=10.0.0
+cairosvg>=2.7.1
