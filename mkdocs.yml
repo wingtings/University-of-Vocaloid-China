@@ -89,7 +89,7 @@ nav:
         - 2024 Fall:
             - 长推 I.「命に嫌われている(被生命所厌恶)」: ./Japanese_Songs/2024_Fall/-24autumn 长推 I.「命に嫌われている(被生命所厌恶)」.md
             - 长推 II.「もうじき夏が終わるから(因为夏夜将终)」: ./Japanese_Songs/2024_Fall/-24autumn 长推 II.「もうじき夏が終わるから(因为夏夜将终)」.md
-            - 长推 III.「メルト（Melt 融化）」: ./Japanese_Songs/2024_Fall/-24autumn 长推 II.「もうじき夏が終わるから(因为夏夜将终)」.md
+            - 长推 III.「メルト（Melt 融化）」: ./Japanese_Songs/2024_Fall/-24autumn 长推 III.「メルト（Melt 融化）」.md
             - 长推 IV.「SnowMix♪」: ./Japanese_Songs/2024_Fall/-24autumn 长推 IV.「SnowMix♪」.md
             - 24winter 短推 I-「那些喧嚣或静谧的节日时光里」: ./Japanese_Songs/2024_Fall/-24winter 短推 I-「那些喧嚣或静谧的节日时光里」.md
         - 2025 Spring:
@@ -128,6 +128,7 @@ nav:
 
 # Markdown extensions
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+  - nl2br # 空行转为换行
   - abbr
   - attr_list
   - admonition
