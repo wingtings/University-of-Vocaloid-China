@@ -3,6 +3,8 @@ mkdocs>=1.6.1
 mkdocs-material>=9.5.0
 mkdocs-material-extensions>=1.3.1
 
+# mkdocs-document-dates-plugin 留着，以备解决workflow的报错
+
 # Markdown 扩展 (提供 pymdownx 系列支持)
 pymdown-extensions>=10.0
 
