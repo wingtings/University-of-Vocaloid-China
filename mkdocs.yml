@@ -57,10 +57,13 @@ nav:
             - 乐正绫十周年“拾光忆绫”活动: ./Synthesis/2025_Spring/乐正绫十周年“拾光忆绫”活动.md
         - 2025 Fall:
             - 调校周常: ./Synthesis/2025_Fall/调校周常.md
-    - 大型演出活动:
+    - 演出和游园会活动:
         - 2025 Spring:
             - 中国科大ACG音乐会: ./Stages/2025_Spring/中国科大ACG音乐会.md
+        - 2025 Fall:
+            - 游园会: ./Stages/2025_Fall/游园会.md
         - 2026 Spring:
+            - 书院嘉年华: ./Stages/2026_Spring/书院嘉年华.md
             - 中国科大ACG音乐会: ./Stages/2026_Spring/中国科大ACG音乐会.md
     - 观影会活动:
         - 2024 Fall:
@@ -92,12 +95,14 @@ nav:
             - 「十重告别」: ./Chinese_Songs/2025_Fall/「十重告别」.md
             - 「搅乱雨燕深沉的睡眠」: ./Chinese_Songs/2025_Fall/「搅乱雨燕深沉的睡眠」.md
             - 神话贺电——「反乌托邦」: ./Chinese_Songs/2025_Fall/神话贺电——「反乌托邦」.md
+        - 2026 Spring:
+            - 神话贺电——「世末歌者」: ./Chinese_Songs/2026_Spring/神话贺电——「世末歌者」.md
     - 日V推歌:
         - 2024 Fall:
-            - 长推 I.「命に嫌われている(被生命所厌恶)」: ./Japanese_Songs/2024_Fall/-24autumn 长推 I.「命に嫌われている(被生命所厌恶)」.md
-            - 长推 II.「もうじき夏が終わるから(因为夏夜将终)」: ./Japanese_Songs/2024_Fall/-24autumn 长推 II.「もうじき夏が終わるから(因为夏夜将终)」.md
-            - 长推 III.「メルト（Melt 融化）」: ./Japanese_Songs/2024_Fall/-24autumn 长推 III.「メルト（Melt 融化）」.md
-            - 长推 IV.「SnowMix♪」: ./Japanese_Songs/2024_Fall/-24autumn 长推 IV.「SnowMix♪」.md
+            - 长推 I-「命に嫌われている(被生命所厌恶)」: ./Japanese_Songs/2024_Fall/-24autumn 长推 I.「命に嫌われている(被生命所厌恶)」.md
+            - 长推 II-「もうじき夏が終わるから(因为夏夜将终)」: ./Japanese_Songs/2024_Fall/-24autumn 长推 II.「もうじき夏が終わるから(因为夏夜将终)」.md
+            - 长推 III-「メルト（Melt 融化）」: ./Japanese_Songs/2024_Fall/-24autumn 长推 III.「メルト（Melt 融化）」.md
+            - 长推 IV-「SnowMix♪」: ./Japanese_Songs/2024_Fall/-24autumn 长推 IV.「SnowMix♪」.md
             - 24winter 短推 I-「那些喧嚣或静谧的节日时光里」: ./Japanese_Songs/2024_Fall/-24winter 短推 I-「那些喧嚣或静谧的节日时光里」.md
         - 2025 Spring:
             - 短推 I-「熙熙攘攘、我们回转向前——」: ./Japanese_Songs/2025_Spring/-25spring 短推 I-「熙熙攘攘、我们回转向前——」.md
@@ -111,6 +116,8 @@ nav:
             - 短推 III-「diaLOG——Catchy!?&あなたしか見えないの」: ./Japanese_Songs/2025_Fall/对话记录.md
             - 短推 IV-「海辺の電話ボックス」: ./Japanese_Songs/2025_Fall/海边的电话亭.md
             - 短推 V-「デスおはぎ」: ./Japanese_Songs/2025_Fall/失踪日和.md
+        - 2026 Spring:
+            - 长推 I-「Night Glow」: ./Japanese_Songs/2026_Spring/Night_Glow.md
     - 其他:
         - 英v推歌: ./Others/English_Songs/「◆The Recycle Brick 再生砖◆」.md
         - 你社的一些名人名梗名事:
