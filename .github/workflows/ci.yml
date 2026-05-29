@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 拉取完整 git 历史，document-dates 才能正确推算创建时间与作者
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
