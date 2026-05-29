@@ -58,10 +58,11 @@
 > 君が生きてる世界に ありがとう，
 > 有你在的这个世界 谢谢。
 
-
 **发行日期：2014.8.31**
 [网易云指路](https://music.163.com/song?id=28364371&uct2=U2FsdGVkX18E8U2QwTNV56wxQwaemklmGXfJWhluKXM=)
 [YouTube指路](https://youtu.be/WlXW5O-YX7w?si=lMvJNjIy86YarwU6)
+
+![1](../JP_fig/831.png)
 
 本文作者：*星笺_Aster*.
 修订、发布：**USTC学生虚拟歌手创作文化与歌声合成研究小组**.
@@ -145,8 +146,8 @@
 > 見えたのです，
 > 都不再有半分虚假。
 
-
-
+![1](../JP_fig/summering1.png)
+![2](../JP_fig/summering2.png)
 
 **发行日期：2024.10.3.**
 [网易云指路](https://music.163.com/song?id=2633061838&uct2=U2FsdGVkX1+6mjwZ0PyDovIa4QchrC5BMdFXfDpStNM=)
@@ -230,10 +231,12 @@
 > 全速力のメロディ，
 > 充满激情速度的旋律。
 
-
 **发行日期：2018.6.9.**
 [网易云指路](https://music.163.com/song?id=1366516740&uct2=U2FsdGVkX195Fit15JJIVin0WIqQl6K8XOS+K6KFV14=)
 [YouTube指路](https://youtu.be/2kZVEUGLgy4?si=opzU4r0nUgOfuit5)
+
+![1](../JP_fig/流星1.png)
+![2](../JP_fig/流星2.png)
 
 本文作者：*星笺_Aster*.
 修订、发布：**USTC学生虚拟歌手创作文化与歌声合成研究小组**.
@@ -335,11 +338,14 @@
 > 出会った 名前は，
 > 遇见的 名字是。
 
-
 **歌姬：洛天依**
 **发行日期：2019.10.18**
 [网易云指路](https://music.163.com/song?id=1392033735&uct2=U2FsdGVkX191VKzR5n1ySY7zqz6yVodIum/mq5em64Q=)
 [YouTube指路](https://youtu.be/i2gjDllF4bA?si=M3hZtkzwj38dEhY8)
+
+![1](../JP_fig/TAO1.png)
+![2](../JP_fig/TAO2.png)
+![3](../JP_fig/TAO3.png)
 
 本文作者：*星笺_Aster*.
 修订、发布：**USTC学生虚拟歌手创作文化与歌声合成研究小组**.

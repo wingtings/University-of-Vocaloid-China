@@ -11,7 +11,7 @@
 [YouTube指路](https://youtu.be/iksyHmE1JAQ?si=N2j3d553BwbL0KyN)
 [Bilibili指路 PV附](https://www.bilibili.com/video/BV15d4y1e78c?vd_source=81c41707a13c338626b71d1993a0486c)（强烈推荐QWQ）
 
-![[CB5252C65ED7C5A86640695823359579.jpg]]
+![cover](../JP_fig/SnowMix1.png)
 
 **「 SnowMix♪」——且在纷飞的旋律中，描绘我们的未白**
 
@@ -49,7 +49,7 @@
 确实如此，华美而神圣的琴声如飞雪穿插、回荡在ミク的人声之间，飞扬在间奏段落，成为本曲不可多得的特色——这样极富个人编曲特色的（不要钱似的）伴奏密铺，再搭配上背景的铃声和鼓点铺底，对初听曲目的人来说，绝对是一种新奇乃至震撼的体验。
 
 
-![[58b0eeac21659598ab4b9f0a633133d0.png]]
+![2](../JP_fig/SnowMix2.png)
 
 > SnowMix♪ 魔法のミュージックで，
 > SnowMix♪用魔法的音符，
@@ -121,7 +121,7 @@
 如此期待着呢~
 
 
-![[07026a02ae7b21d603da77b23327dc46.png]]
+![3](../JP_fig/SnowMix3.png)
 
 本文作者：*星笺_Aster*.
 修订、发布：**USTC学生虚拟歌手创作文化与歌声合成研究小组**.
