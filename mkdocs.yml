@@ -129,6 +129,9 @@ nav:
             - 立方体: ./Others/People/立方体.md
             - YXAIN: ./Others/People/YXAIN.md
             - wingtings: ./Others/People/wingtings.md
+        - 歌词接龙:
+            - 简介: ./Others/JieLong/接龙简介.md
+            - 第一次接龙记录: ./Others/JieLong/第一次接龙记录.md
     - 社团会议:
         - 2024 Fall:
             - 院级社团筹备以及建立: ./Meetings/2024_Fall/院级社团筹备以及建立.md
