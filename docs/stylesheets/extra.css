@@ -174,20 +174,84 @@
 .vstc-mp.playing .vstc-mp-eq span:nth-child(3) { animation-delay: 0.5s; }
 .vstc-mp.playing .vstc-mp-eq span:nth-child(4) { animation-delay: 0.15s; }
 
-/* 进度条 */
+/* 歌词字幕（单行同步） */
+.vstc-mp-lrc {
+  height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 0.64rem;
+  line-height: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: height 0.2s ease, opacity 0.2s ease, margin-top 0.2s ease;
+}
+
+.vstc-mp-lrc.show {
+  height: 1rem;
+  margin-top: 10px;
+  opacity: 1;
+}
+
+/* 进度条（含拖动手柄）+ 时长 */
+.vstc-mp-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
 .vstc-mp-progress {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  height: 14px;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.vstc-mp-track {
+  position: relative;
+  width: 100%;
   height: 4px;
-  margin: 12px 0 10px;
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
 }
 
 .vstc-mp-played {
+  position: relative;
   width: 0;
   height: 100%;
   border-radius: 2px;
   background: #fff;
+}
+
+.vstc-mp-played::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.15s ease;
+}
+
+.vstc-mp-progress:hover .vstc-mp-played::after,
+.vstc-mp.dragging .vstc-mp-played::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.vstc-mp-time {
+  flex: 0 0 auto;
+  font-size: 0.56rem;
+  opacity: 0.85;
+  white-space: nowrap;
 }
 
 /* 底部：歌单胶囊 + 控制按钮 */
@@ -202,7 +266,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  max-width: 55%;
+  max-width: 40%;
   padding: 5px 10px;
   border: none;
   border-radius: 999px;
@@ -225,12 +289,12 @@
 .vstc-mp-ctrl {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .vstc-mp-btn {
   display: flex;
-  padding: 4px;
+  padding: 3px;
   border: none;
   border-radius: 50%;
   color: #fff;
@@ -239,7 +303,7 @@
 }
 
 .vstc-mp-btn:hover { background: rgba(255, 255, 255, 0.2); }
-.vstc-mp-btn svg { width: 20px; height: 20px; fill: currentColor; }
+.vstc-mp-btn svg { width: 19px; height: 19px; fill: currentColor; }
 
 .vstc-mp-play {
   align-items: center;

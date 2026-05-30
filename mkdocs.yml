@@ -188,12 +188,14 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - pymdownx.tasklist:
       custom_checkbox: true
 
+# 注意：?v=N 是缓存版本号。每次改动 player.js / extra.css 后把 N 加 1，
+# 否则浏览器/CDN 会沿用旧缓存（这正是“电脑端看到的是旧版播放器”的原因）。
 extra_css:
-  - stylesheets/extra.css   # 自定义样式：.grid.cards 整张卡片可点击、自建音乐播放器、页脚组件等
+  - stylesheets/extra.css?v=3   # 自定义样式：.grid.cards 整张卡片可点击、自建音乐播放器、页脚组件等
 
 extra_javascript:
-  - javascripts/player.js                                                  # 自建卡片播放器：加载网易云双歌单 + 3D 倾斜
-  - javascripts/widgets.js                                                 # 社团运行时计时
+  - javascripts/player.js?v=3                                              # 自建卡片播放器：双歌单/3D倾斜/拖动/进度/模式/歌词
+  - javascripts/widgets.js?v=3                                             # 社团运行时计时
   - https://busuanzi.9420.ltd/busuanzi.pure.mini.js                        # 不蒜子访问统计（镜像，官方源不稳可换）
 
 extra:
