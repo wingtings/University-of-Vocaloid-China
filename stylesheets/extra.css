@@ -60,20 +60,288 @@
 }
 
 /* ============================================================
-   固定迷你音乐播放器（APlayer）位置与层级微调
-   默认固定在左下角；抬高 z-index 避免被遮挡，移动端缩小占位
+   自建卡片音乐播放器
+   固定左下角；渐变卡片 + 3D 倾斜 + 歌单面板 + 收起悬浮按钮
    ============================================================ */
-.aplayer.aplayer-fixed {
+.vstc-mp {
+  position: fixed;
+  left: 2rem;
+  bottom: 2.5rem;
+  width: 340px;
+  max-width: calc(100vw - 2rem);
   z-index: 9;
+  perspective: 900px;
+  font-feature-settings: "tnum";
 }
 
-.aplayer.aplayer-fixed .aplayer-body {
-  left: 0 !important;
+.vstc-mp-card {
+  position: relative;
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #63c7ec 0%, #4a9fe0 60%, #4f86e0 100%);
+  box-shadow: 0 10px 30px rgba(40, 120, 200, 0.35);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  will-change: transform;
+  cursor: grab; /* 提示可拖动；按钮/进度条会覆盖为各自光标 */
 }
 
+.vstc-mp.dragging { user-select: none; }
+.vstc-mp.dragging .vstc-mp-card { cursor: grabbing; transition: none; }
+
+.vstc-mp-card:hover {
+  box-shadow: 0 16px 40px rgba(40, 120, 200, 0.45);
+}
+
+/* 头部：封面 + 信息 + 可视化条 */
+.vstc-mp-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vstc-mp-cover {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.vstc-mp-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vstc-mp.playing .vstc-mp-cover {
+  animation: vstc-mp-spin 12s linear infinite;
+}
+
+.vstc-mp-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.vstc-mp-title {
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.vstc-mp-artist {
+  margin-top: 2px;
+  font-size: 0.62rem;
+  opacity: 0.85;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 可视化均衡条（CSS 动画，播放时跳动） */
+.vstc-mp-eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  flex: 0 0 auto;
+  height: 16px;
+}
+
+.vstc-mp-eq span {
+  width: 3px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.vstc-mp.playing .vstc-mp-eq span {
+  animation: vstc-mp-eq 0.9s ease-in-out infinite;
+}
+
+.vstc-mp.playing .vstc-mp-eq span:nth-child(2) { animation-delay: 0.25s; }
+.vstc-mp.playing .vstc-mp-eq span:nth-child(3) { animation-delay: 0.5s; }
+.vstc-mp.playing .vstc-mp-eq span:nth-child(4) { animation-delay: 0.15s; }
+
+/* 进度条 */
+.vstc-mp-progress {
+  height: 4px;
+  margin: 12px 0 10px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.vstc-mp-played {
+  width: 0;
+  height: 100%;
+  border-radius: 2px;
+  background: #fff;
+}
+
+/* 底部：歌单胶囊 + 控制按钮 */
+.vstc-mp-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vstc-mp-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 55%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 0.6rem;
+  cursor: pointer;
+}
+
+.vstc-mp-pill:hover { background: rgba(255, 255, 255, 0.32); }
+
+.vstc-mp-pill-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.vstc-mp-pill svg { flex: 0 0 auto; width: 14px; height: 14px; fill: currentColor; }
+
+.vstc-mp-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vstc-mp-btn {
+  display: flex;
+  padding: 4px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+}
+
+.vstc-mp-btn:hover { background: rgba(255, 255, 255, 0.2); }
+.vstc-mp-btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+.vstc-mp-play {
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #3a8fd6;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.vstc-mp-play:hover { background: #fff; }
+.vstc-mp-play svg { width: 18px; height: 18px; }
+
+/* 歌单面板（卡片上方展开） */
+.vstc-mp-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  margin-bottom: 8px;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--md-default-bg-color, #fff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: max-height 0.25s ease;
+}
+
+.vstc-mp-panel.open {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.vstc-mp-list {
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+}
+
+.vstc-mp-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.vstc-mp-list li:hover { background: rgba(74, 159, 224, 0.12); }
+.vstc-mp-list li.active { background: rgba(74, 159, 224, 0.18); }
+
+.vstc-mp-li-name {
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color, #222);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.vstc-mp-li-art {
+  font-size: 0.58rem;
+  color: var(--md-default-fg-color--light, #888);
+}
+
+/* 收起态：悬浮圆形按钮 */
+.vstc-mp-fab {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, #63c7ec, #4f86e0);
+  box-shadow: 0 6px 18px rgba(40, 120, 200, 0.4);
+  cursor: pointer;
+}
+
+.vstc-mp-fab svg { width: 24px; height: 24px; fill: currentColor; }
+
+.vstc-mp.collapsed { width: auto; }
+.vstc-mp.collapsed .vstc-mp-card,
+.vstc-mp.collapsed .vstc-mp-panel { display: none; }
+.vstc-mp.collapsed .vstc-mp-fab { display: flex; }
+.vstc-mp.playing.collapsed .vstc-mp-fab { animation: vstc-mp-spin 8s linear infinite; }
+
+@keyframes vstc-mp-eq {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+@keyframes vstc-mp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 移动端缩小占位 */
 @media screen and (max-width: 76.1875em) {
-  /* 移动端：折叠歌词、避免播放器过宽遮挡内容 */
-  .aplayer.aplayer-fixed .aplayer-lrc {
-    display: none;
+  .vstc-mp { left: 1rem; bottom: 1.5rem; width: 300px; }
+}
+
+/* 尊重减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .vstc-mp.playing .vstc-mp-cover,
+  .vstc-mp.playing .vstc-mp-eq span,
+  .vstc-mp.playing.collapsed .vstc-mp-fab {
+    animation: none;
   }
+  .vstc-mp-card { transition: none; }
 }
