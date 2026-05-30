@@ -29,4 +29,12 @@ Leo酱听说啊，歌声合成技术协会在本次的 ACG 音乐会中不仅为
 
 ## 在ACG音乐会的现场
 
-现场演出视频：[【洛天依&乐正绫】致你【原创PV付】【南北组】【2025中国科大ACG音乐会单品】](https://www.bilibili.com/video/BV1Ku3czxEzM)
+现场演出视频：
+
+<div class="grid cards" markdown>
+
+-   [![【洛天依&乐正绫】致你【原创PV付】【南北组】【2025中国科大ACG音乐会单品】](../../img/【洛天依&乐正绫】致你【原创PV付】【南北组】【2025中国科大ACG音乐会单品】.jpg)](https://www.bilibili.com/video/BV1Ku3czxEzM)
+
+    **[【洛天依&乐正绫】致你【原创PV付】【南北组】【2025中国科大ACG音乐会单品】](https://www.bilibili.com/video/BV1Ku3czxEzM)**
+
+</div>

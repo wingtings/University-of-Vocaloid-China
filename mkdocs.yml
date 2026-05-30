@@ -188,6 +188,9 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - pymdownx.tasklist:
       custom_checkbox: true
 
+extra_css:
+  - stylesheets/extra.css   # 自定义样式：.grid.cards 整张卡片可点击等
+
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
