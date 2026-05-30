@@ -2,7 +2,7 @@ site_name: University of Vocaloid China
 site_url: https://wiki.feixilu.top
 repo_url: https://github.com/wingtings/University-of-Vocaloid-China
 edit_uri: edit/master/docs/   # “编辑本页”铅笔按钮跳转到 GitHub 在线编辑（分支 master，文档目录 docs）
-copyright: Copyright @ University of Vocaloid China 2025
+copyright: Copyright @ University of Vocaloid China 2026
 
 theme:
   name: 'material'
