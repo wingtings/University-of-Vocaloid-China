@@ -44,3 +44,36 @@
 .md-typeset .grid.cards > ul > li:hover > p:first-of-type > a > img {
   transform: scale(1.03);
 }
+
+/* ============================================================
+   页脚组件：社团运行时 + 不蒜子访问统计
+   ============================================================ */
+.md-footer-meta .vstc-footer-extra {
+  margin-top: 0.4rem;
+  font-size: 0.62rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+.md-footer-meta .vstc-footer-extra .vstc-runtime {
+  white-space: nowrap;
+}
+
+/* ============================================================
+   固定迷你音乐播放器（APlayer）位置与层级微调
+   默认固定在左下角；抬高 z-index 避免被遮挡，移动端缩小占位
+   ============================================================ */
+.aplayer.aplayer-fixed {
+  z-index: 9;
+}
+
+.aplayer.aplayer-fixed .aplayer-body {
+  left: 0 !important;
+}
+
+@media screen and (max-width: 76.1875em) {
+  /* 移动端：折叠歌词、避免播放器过宽遮挡内容 */
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+}
