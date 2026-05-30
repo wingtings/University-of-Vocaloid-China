@@ -1,0 +1,46 @@
+/* ============================================================
+   .grid.cards 整张卡片可点击
+   原理：把卡片内最后一个链接（标题链接）的 ::after 伪元素
+   拉伸覆盖整张卡片，于是点击卡片任意位置都会触发该链接。
+   封面图链接与标题链接指向同一个 URL，所以二者重叠无影响。
+   参考：https://github.com/squidfunk/mkdocs-material/issues/6269
+   ============================================================ */
+
+.md-typeset .grid.cards > ul > li {
+  position: relative;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  cursor: pointer;
+}
+
+/* 标题链接的 ::after 覆盖整卡 */
+.md-typeset .grid.cards > ul > li > p:last-of-type a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* 封面图：填满卡片宽度、统一圆角 */
+.md-typeset .grid.cards > ul > li > p:first-of-type > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.1rem;
+}
+
+/* 封面图链接去掉默认内边距影响，悬停时轻微放大 */
+.md-typeset .grid.cards > ul > li > p:first-of-type > a {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.1rem;
+}
+
+.md-typeset .grid.cards > ul > li > p:first-of-type > a > img {
+  transition: transform 0.2s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover > p:first-of-type > a > img {
+  transform: scale(1.03);
+}
