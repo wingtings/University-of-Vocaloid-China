@@ -189,7 +189,14 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       custom_checkbox: true
 
 extra_css:
-  - stylesheets/extra.css   # 自定义样式：.grid.cards 整张卡片可点击等
+  - https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css   # 音乐播放器样式
+  - stylesheets/extra.css   # 自定义样式：.grid.cards 整张卡片可点击、播放器/页脚组件等
+
+extra_javascript:
+  - https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js     # APlayer 播放器内核
+  - javascripts/player.js                                                  # 加载网易云双歌单并初始化固定播放器
+  - javascripts/widgets.js                                                 # 社团运行时计时
+  - https://busuanzi.9420.ltd/busuanzi.pure.mini.js                        # 不蒜子访问统计（镜像，官方源不稳可换）
 
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”

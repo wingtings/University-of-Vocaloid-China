@@ -1,0 +1,25 @@
+{% if config.copyright or not config.extra.generator == false %}
+  <div class="md-copyright">
+    {% if config.copyright %}
+      <div class="md-copyright__highlight">
+        {{ config.copyright }}
+      </div>
+    {% endif %}
+    {% if not config.extra.generator == false %}
+      Made with
+      <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        Material for MkDocs
+      </a>
+    {% endif %}
+    <!-- 社团运行时 + 不蒜子访问统计 -->
+    <div class="vstc-footer-extra">
+      <span class="vstc-runtime">本社团已成立 <span id="vstc-runtime">…</span> 天</span>
+      <span id="busuanzi_container_site_pv" style="display:none">
+        　·　总访问 <span id="busuanzi_value_site_pv"></span> 次
+      </span>
+      <span id="busuanzi_container_site_uv" style="display:none">
+        　·　访客 <span id="busuanzi_value_site_uv"></span> 人
+      </span>
+    </div>
+  </div>
+{% endif %}

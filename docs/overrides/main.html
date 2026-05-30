@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<!-- ========== 顶部公告栏（可关闭，已启用 announce.dismiss）==========
+     修改下面这段内容即可更新公告；想换链接/文案直接改即可。 -->
+{% block announce %}
+  🎶 欢迎来到 USTC 歌声合成技术协会！欢迎加入
+  <a href="https://qm.qq.com/q/rQDnmJWE3A" target="_blank" rel="noopener">中V学园QQ群</a>
+  与我们一起创作术力口～
+{% endblock %}
+
+<!-- ========== 固定迷你音乐播放器容器 ==========
+     APlayer 以 fixed 方式自行定位（左下角），此 div 在文档流中不可见，
+     仅作为挂载点，放在何处都不影响显示。 -->
+{% block footer %}
+  <div id="vstc-aplayer"></div>
+  {{ super() }}
+{% endblock %}
