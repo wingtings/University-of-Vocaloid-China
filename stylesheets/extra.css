@@ -64,12 +64,16 @@
    固定左下角；渐变卡片 + 3D 倾斜 + 歌单面板 + 收起悬浮按钮
    ============================================================ */
 .vstc-mp {
+  /* 主题色（可被 JS / 颜色设置覆盖） */
+  --vc: #4a9fe0;
+  --vc-l: #63c7ec;
+  --vc-d: #4f86e0;
   position: fixed;
   left: 2rem;
   bottom: 2.5rem;
   width: 340px;
   max-width: calc(100vw - 2rem);
-  z-index: 9;
+  z-index: 100;
   perspective: 900px;
   font-feature-settings: "tnum";
 }
@@ -79,7 +83,7 @@
   padding: 14px 16px;
   border-radius: 16px;
   color: #fff;
-  background: linear-gradient(135deg, #63c7ec 0%, #4a9fe0 60%, #4f86e0 100%);
+  background: linear-gradient(135deg, var(--vc-l) 0%, var(--vc) 60%, var(--vc-d) 100%);
   box-shadow: 0 10px 30px rgba(40, 120, 200, 0.35);
   transform-style: preserve-3d;
   transition: transform 0.15s ease, box-shadow 0.2s ease;
@@ -242,7 +246,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  color: #3a8fd6;
+  color: var(--vc-d);
   background: rgba(255, 255, 255, 0.95);
 }
 
@@ -309,12 +313,69 @@
   border: none;
   border-radius: 50%;
   color: #fff;
-  background: linear-gradient(135deg, #63c7ec, #4f86e0);
+  background: linear-gradient(135deg, var(--vc-l), var(--vc-d));
   box-shadow: 0 6px 18px rgba(40, 120, 200, 0.4);
   cursor: pointer;
 }
 
 .vstc-mp-fab svg { width: 24px; height: 24px; fill: currentColor; }
+
+/* 颜色设置：调色按钮 + 色板弹层 */
+.vstc-mp-color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  padding: 3px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.22);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.vstc-mp-color:hover { background: rgba(255, 255, 255, 0.38); opacity: 1; }
+.vstc-mp-color svg { width: 14px; height: 14px; fill: currentColor; }
+
+.vstc-mp-colors {
+  position: absolute;
+  top: 42px;
+  right: 14px;
+  display: none;
+  grid-template-columns: repeat(3, 20px);
+  gap: 6px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--md-default-bg-color, #fff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.vstc-mp-colors.open { display: grid; }
+
+.vstc-mp-sw {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.vstc-mp-sw:hover { transform: scale(1.12); }
+
+.vstc-mp-color-input {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
 
 .vstc-mp.collapsed { width: auto; }
 .vstc-mp.collapsed .vstc-mp-card,
