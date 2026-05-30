@@ -22,8 +22,39 @@
     play: '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',
     pause: '<svg viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>',
     chevron: '<svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>',
-    music: '<svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3z"/></svg>'
+    music: '<svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3z"/></svg>',
+    palette: '<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18 1.5 1.5 0 0 0 1.5-1.5c0-.39-.15-.74-.39-1-.23-.26-.39-.61-.39-1a1.5 1.5 0 0 1 1.5-1.5H16a5 5 0 0 0 5-5c0-4.42-4.03-8-9-8zM6.5 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>'
   };
+
+  var COLOR_KEY = "vstc-mp-color";
+  var PRESETS = ["#4a9fe0", "#66ccff", "#9b6cff", "#ff6fa5", "#36c6a0", "#ff8a3d"];
+
+  function shade(hex, pct) {
+    var c = hex.replace("#", "");
+    if (c.length === 3) c = c[0] + c[0] + c[1] + c[1] + c[2] + c[2];
+    var n = parseInt(c, 16);
+    var r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    var t = pct < 0 ? 0 : 255, p = Math.abs(pct) / 100;
+    r = Math.round((t - r) * p) + r;
+    g = Math.round((t - g) * p) + g;
+    b = Math.round((t - b) * p) + b;
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+
+  function applyColor(hex) {
+    if (!/^#?[0-9a-fA-F]{6}$/.test(hex)) return;
+    if (hex[0] !== "#") hex = "#" + hex;
+    els.wrap.style.setProperty("--vc", hex);
+    els.wrap.style.setProperty("--vc-l", shade(hex, 20));
+    els.wrap.style.setProperty("--vc-d", shade(hex, -12));
+    try { localStorage.setItem(COLOR_KEY, hex); } catch (e) {}
+  }
+
+  function restoreColor() {
+    var c;
+    try { c = localStorage.getItem(COLOR_KEY); } catch (e) { return; }
+    if (c) applyColor(c);
+  }
 
   var POS_KEY = "vstc-mp-pos";
 
@@ -64,10 +95,26 @@
 
     var eq = h("div", "vstc-mp-eq", "<span></span><span></span><span></span><span></span>");
 
+    var colorBtn = h("button", "vstc-mp-color", ICONS.palette);
+    colorBtn.title = "更换播放器颜色";
+    var colorPop = h("div", "vstc-mp-colors");
+    PRESETS.forEach(function (c) {
+      var sw = h("button", "vstc-mp-sw");
+      sw.style.background = c;
+      sw.addEventListener("click", function () { applyColor(c); });
+      colorPop.appendChild(sw);
+    });
+    var colorInput = document.createElement("input");
+    colorInput.type = "color";
+    colorInput.className = "vstc-mp-color-input";
+    colorInput.addEventListener("input", function () { applyColor(colorInput.value); });
+    colorPop.appendChild(colorInput);
+
     var head = h("div", "vstc-mp-head");
     head.appendChild(cover);
     head.appendChild(info);
     head.appendChild(eq);
+    head.appendChild(colorBtn);
 
     var prog = h("div", "vstc-mp-progress");
     var played = h("div", "vstc-mp-played");
@@ -90,6 +137,7 @@
     card.appendChild(head);
     card.appendChild(prog);
     card.appendChild(foot);
+    card.appendChild(colorPop);
 
     var panel = h("div", "vstc-mp-panel");
     var list = h("ul", "vstc-mp-list");
@@ -116,10 +164,12 @@
     cover.addEventListener("click", function () { setCollapsed(true); });
     fab.addEventListener("click", function () { setCollapsed(false); });
     prog.addEventListener("click", seek);
+    colorBtn.addEventListener("click", function () { colorPop.classList.toggle("open"); });
 
     enableTilt(card);
     enableDrag(wrap, card);
     restorePos(wrap);
+    restoreColor();
 
     // 移动端默认收起，避免遮挡内容
     if (window.matchMedia("(max-width: 76.1875em)").matches) setCollapsed(true);
@@ -131,7 +181,7 @@
 
     function onDown(e) {
       if (e.button !== 0) return;
-      if (e.target.closest("button, .vstc-mp-progress, .vstc-mp-list, .vstc-mp-cover")) return;
+      if (e.target.closest("button, .vstc-mp-progress, .vstc-mp-list, .vstc-mp-cover, .vstc-mp-colors")) return;
       dragging = true;
       moved = false;
       var r = wrap.getBoundingClientRect();
@@ -221,6 +271,11 @@
   function go(dir) { load(index + dir, true); }
 
   function toggle() {
+    if (!songs.length) { // 加载失败时点播放 = 重试
+      els.title.textContent = "加载中…";
+      loadSongs();
+      return;
+    }
     if (!audio.src) { load(index, true); return; }
     if (audio.paused) audio.play().catch(function () {}); else audio.pause();
   }
@@ -273,7 +328,12 @@
         .catch(function () { return []; });
     })).then(function (parts) {
       songs = parts.reduce(function (a, b) { return a.concat(b); }, []);
-      if (!songs.length) { els.wrap.style.display = "none"; return; }
+      if (!songs.length) {
+        // 不再隐藏播放器，避免网络拉取失败时电脑端整个消失；提示点播放重试
+        els.title.textContent = "歌单加载失败，点 ▶ 重试";
+        els.artist.textContent = "";
+        return;
+      }
       load(0, false);
     });
   }
